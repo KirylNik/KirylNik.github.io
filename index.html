@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>The Lord of the Rings - Turn-based game</title>
+        <link rel="stylesheet" href="lp_data/mainstyle.css">
+        <link rel="stylesheet" href="lp_data/font-awesome.min.css">
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="lp_data/desktopscreen.css">
+        <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1023px)" href="lp_data/tabletscreen.css">
+        <link rel="stylesheet" media="screen and (max-width: 767px) and (min-width: 401px)" href="lp_data/mobilescreen.css">
+        <link rel="stylesheet" media="screen and (max-width: 400px)" href="lp_data/tinyscreen.css">
+    </head>
+    <body>
+        <audio id='audio0' autoplay><source src="audio/00.mp3" type="audio/mpeg"></audio>
+        <header class="header" id="header">
+            <div class="logo"><a href="https://google.com/#"></a></div>
+            <nav class="nav-header">
+                <div class="menu-toggle" id="menuToggle">≡</div>
+                <ul class="nav-list hidden" id="navList">
+                    <li><a href="https:///google.com/#shots">Screenshots</a></li>
+                    <li><a href="https:///google.com/#play">Let's Play</a></li>
+                    <li><a href="https:///google.com/#developer">Developer</a></li>
+                </ul>
+              </nav>
+        </header>
+        <main>
+            <section class="section-promo">
+                <h1>The Lord of the Rings</h1>
+                <h3>Immerse yourself in the world of Lord of the Rings with this game</h3>
+                <a class="button" href="https:///google.com/#play">Try now</a>
+            </section>
+            <section class="section-screenshots" id="section-screenshots">
+                <h2>Screenshots of the game</h2>
+                <h3>Familiarize yourself with the gameplay</h3>
+                <div class="screen-gallery" id="gallery">
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_1"></div>
+                        <img class="screenshot-preview" src="./images/screen_1.jpg" alt="Choosing spells">
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_2"></div>
+                        <img class="screenshot-preview" src="./images/screen_2.jpg" alt="Task">
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_3"></div>
+                        <img class="screenshot-preview" src="./images/screen_3.jpg" alt="Fight">
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_4"></div>
+                        <img class="screenshot-preview" src="./images/screen_4.jpg" alt="Choose a hero">
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_5"></div>
+                        <img class="screenshot-preview" src="./images/screen_5.jpg" alt="Choose a hero">
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-preview-container" id="screen_6"></div>
+                        <img class="screenshot-preview" src="./images/screen_6.jpg" alt="Choose a hero">
+                    </div>
+                </div>
+            </section>
+            <section class="section-registration">
+                <h2>Play right now</h2>
+                <h3>Complete registration and play!</h3>
+                <form class="registration-form" action="" method="get">
+                    <span class="registration-form-label">Inter your name:</span>
+                    <input type="text" placeholder="your name*" class="registration-form-input" name="" id="input-nickname" required>
+                    <a class="button" href="https:///google.com/game/">Play</a>
+                </form>
+            </section>
+            <section class="section-developer">
+                <h2>Developer</h2>
+                <h3>The author of the game.</h3>
+                <figure class="developer-container">
+                    <div class="developer-image"></div>
+                    <figcaption>Kiryl Nikalaichuk</figcaption>
+                    <ul class="developer-social-icon">
+                        <li><a class="fa fa-github" href="https://github.com/KirylNik/"></a></li>
+                        <li><a class="fa fa-skype" href="skype:ksenofon_g"></a></li>
+                    </ul>
+                </figure>
+            </section>
+      </main>
+      <footer class="footer">
+            <p>Created by Kiryl Nikalaichuk. 2018</p>
+      </footer>
+      <div class="modal-window-wrapper disable"  id="modalWindowContainer"><!--ref-->
+            <div id="modalWindow" class="modal-window"><!--ref--></div><!--ref-->
+      </div>
+      <script src="lp_data/scripts.js"></script>
+    </body>
+</html>
