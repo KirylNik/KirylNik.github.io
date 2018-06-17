@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Final game</title>
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div id="audio-container">
+            <audio id='audio0'><source src="audio/00.mp3" type="audio/mpeg"></audio>
+            <audio id='audio1' autoplay><source src="audio/01.mp3" type="audio/mpeg"></audio>
+            <audio id='audio2'><source src="audio/02.mp3" type="audio/mpeg"></audio>
+            <audio id='audio3'><source src="audio/03.mp3" type="audio/mpeg"></audio>
+            <audio id='audio4'><source src="audio/04.mp3" type="audio/mpeg"></audio>
+            <audio id='audio5'><source src="audio/05.mp3" type="audio/mpeg"></audio>
+            <audio id='audio6'><source src="audio/06.mp3" type="audio/mpeg"></audio>
+            <audio id='audio7'><source src="audio/07.mp3" type="audio/mpeg"></audio>
+            <audio id='audio8'><source src="audio/08.mp3" type="audio/mpeg"></audio>
+            <audio id='audio9'><source src="audio/09.mp3" type="audio/mpeg"></audio>
+            <audio id='audio10'><source src="audio/10.mp3" type="audio/mpeg"></audio>
+            <audio id='audio11'><source src="audio/11.mp3" type="audio/mpeg"></audio>
+            <audio id='audio12'><source src="audio/12.mp3" type="audio/mpeg"></audio>
+            <audio id='audio13'><source src="audio/13.mp3" type="audio/mpeg"></audio>
+        </div>
+        <div class="audio-player-buttons-container" id="audio-player-buttons-container">
+            <div class="audio-player-button" id="audio-player-button-back"></div>
+            <div class="audio-player-button" id="audio-player-button-pause"></div>
+            <div class="audio-player-button" id="audio-player-button-play"></div>
+            <div class="audio-player-button" id="audio-player-button-next"></div>
+        </div>
+        <div class="personages-status-container">
+            <div class="personages-status">
+                <div class="name-personage" id="status-bar-player-name"></div>
+                <div class="health-value" id="status-bar-player-health"></div>
+            </div>
+            <div class="personages-status">
+                <div class="name-personage" id="status-bar-enemy-name"></div>
+                <div class="health-value" id="status-bar-enemy-health"></div>
+            </div>
+        </div>
+        <div class="select-action" id="select-action">
+            <div class="select-action-close"></div>
+            <div class="menu-action-title">Select an action</div>
+            <div class="menu-action-type-container">
+                <div class="menu-action-type-act" id="menu-action-button-attack">
+                    <div class="type-act-icon type-act-icon-attack"></div>
+                    <div class="menu-button">Attack</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-action-button-epic-attack">
+                    <div class="type-act-icon type-act-icon-epic-attack"></div>
+                    <div class="menu-button">Epic Attack</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-action-button-potions">
+                    <div class="type-act-icon type-act-icon-potions"></div>
+                    <div class="menu-button">Potions</div>
+                </div>
+            </div>
+        </div>
+        <div class="select-action" id="select-attack">
+            <div class="select-action-close"></div>
+            <div class="menu-action-title">Select the attack type</div>
+            <div class="menu-action-type-container">
+                <div class="menu-action-type-act" id="menu-attack-button-attack1">
+                    <div class="type-act-icon type-attack-icon-attack1"></div>
+                    <div class="concrete-type-act-button">Fast attack</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-attack2">
+                    <div class="type-act-icon type-attack-icon-attack2"></div>
+                    <div class="concrete-type-act-button">Surprise attack</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-attack3">
+                    <div class="type-act-icon type-attack-icon-attack3"></div>
+                    <div class="concrete-type-act-button">Front attack</div>
+                </div>
+            </div>
+        </div>
+        <div class="select-action" id="select-epic-attack">
+            <div class="select-action-close"></div>
+            <div class="menu-action-title">Select the Epic Attack</div>
+            <div class="menu-action-type-container">
+                <div class="menu-action-type-act" id="menu-attack-button-epic-attack1">
+                    <div class="type-act-icon type-attack-icon-epic-attack1"></div>
+                    <div class="concrete-type-act-button">Fiery Blast</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-epic-attack2">
+                    <div class="type-act-icon type-attack-icon-epic-attack2"></div>
+                    <div class="concrete-type-act-button">Storm</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-epic-attack3">
+                    <div class="type-act-icon type-attack-icon-epic-attack3"></div>
+                    <div class="concrete-type-act-button">Thunderstorm</div>
+                </div>
+            </div>
+        </div>
+        <div class="select-action" id="select-potions">
+            <div class="select-action-close"></div>
+            <div class="menu-action-title">Choose a spell</div>
+            <div class="menu-action-type-container">
+                <div class="menu-action-type-act" id="menu-attack-button-potions1">
+                    <div class="type-act-icon type-attack-icon-spell1"></div>
+                    <div class="concrete-type-act-button">Minas Morgul</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-potions2">
+                    <div class="type-act-icon type-attack-icon-spell2"></div>
+                    <div class="concrete-type-act-button">Light of elves</div>
+                </div>
+                <div class="menu-action-type-act" id="menu-attack-button-potions3">
+                    <div class="type-act-icon type-attack-icon-spell3"></div>
+                    <div class="concrete-type-act-button">Light of Anora</div>
+                </div>
+            </div>
+        </div>
+        <div class="task-container" id="task-container">
+            <div class="select-action-close" id="task-container-close"></div>
+            <div class="menu-action-title" id="task-container-title">Complete the task</div>
+            <div class="question-container" id="question-container"></div>
+            <div class="answer-container" id="answer-container"></div>
+            <div class="buttons-answer" id="buttons-answer"></div>
+        </div>
+        <div class="modal-window-background" id="modal-window-background"></div>
+        <div class="button-run" id="button-run">run</div>
+        <script src="script/script.js" async defer></script>
+    </body>
+</html>

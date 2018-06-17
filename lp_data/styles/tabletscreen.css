@@ -1,0 +1,26 @@
+.menu-toggle {
+    display: none;
+}
+
+.header-navigation {
+    width: 300px;
+}
+
+.nav-list a {
+    font-size: 1.3em;
+    padding: 5px 10px;
+    color: white;
+    transition: border 0.3s linear;
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 10px;
+}
+
+.nav-list li a:hover {
+    border: 2px solid goldenrod;
+}
+
+.screen-gallery {
+    width: 650px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

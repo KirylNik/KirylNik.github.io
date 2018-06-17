@@ -1,0 +1,74 @@
+._hidden {
+  display: none;
+}
+
+.header-navigation {
+  width: 20px;
+}
+
+.navigation-list {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  animation: opacityin 0.3s linear;
+}
+
+.navigation-list li {
+  width: 100%;
+  color: white;
+  padding: 15px 10px;
+  background-color: #000;
+}
+
+.navigation-list a {
+  color: white;
+  text-transform:  uppercase;
+  font-size: 1.3em;
+}
+
+.navigation-list a:hover {
+  color: goldenrod;
+}
+
+.header-wrapper {
+  height: 450px;
+}
+
+.header-body {
+  margin-top: 50px;
+}
+
+.header-wrapper {
+  height: 400px;
+}
+
+.header-body {
+  margin-top: 100px;
+}
+
+.header-body h1 {
+  font-size: 30px;
+}
+
+.header-body h2 {
+  font-size: 10px;
+}
+
+.screen-gallery {
+  width: 300px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.block-screenshots h1
+,.block-gamelink h1
+,.block-developer h1 {
+  font-size: 32px;
+}
+
+.block-screenshots h2
+,.block-gamelink h2
+,.block-developer h2 {
+  font-size: 12px;
+}

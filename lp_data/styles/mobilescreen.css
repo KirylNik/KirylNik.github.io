@@ -1,0 +1,46 @@
+.hidden {
+    display: none;
+}
+
+.header-navigation {
+    width: 20px;
+}
+
+.nav-list {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    animation: opacityIn 0.3s linear;
+}
+
+.nav-list li {
+    width: 100%;
+    color: white;
+    padding: 20px 10px;
+    background-color: #000;
+    text-align: center;
+}
+
+.nav-list a {
+    color: white;
+    font-size: 2em;
+}
+
+.nav-list a:hover {
+    color: goldenrod;
+}
+
+.section-promo h1 {
+    font-size: 4em;
+}
+
+.section-promo h3 {
+    font-size: 1.2em;
+}
+
+.screen-gallery {
+    width: 300px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

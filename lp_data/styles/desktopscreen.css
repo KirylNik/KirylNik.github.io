@@ -1,0 +1,21 @@
+.menu-toggle {
+    display: none;
+}
+
+.nav-list a {
+    font-size: 1.6em;
+    color: white;
+    padding: 5px 15px;
+    border: 2px solid rgba(0,0,0,0);
+}
+
+.nav-list li:hover {
+    border-top: 7px solid white;
+    transition: all 0.3s;
+}
+
+.screen-gallery {
+    width: 1000px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

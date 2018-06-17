@@ -1,0 +1,1480 @@
+@font-face {
+    font-family: 'anironbold';
+    src: url('../fonts/anirb___-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'anironregular';
+    src: url('../fonts/anirm___-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes changePositionResultContainer {
+    0% {
+        transition-property: opacity;
+        opacity: 0;
+    }
+
+    10% {
+        transition-property: opacity;
+        right: 30%;
+        opacity: 1;
+    }
+
+    90% {
+        right: 45%;
+        opacity: 1;
+    }
+
+    100% {
+        right: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes animatePlayerAttack1 {
+    0% {
+        left: 20%
+    }
+
+    15% {
+        left: 58%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    85% {
+        left: 58%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    100% {
+        left: 20%;
+    }
+}
+
+@keyframes animateOrcAttack1 {
+    0% {
+        right: 20%;
+        background-image: url("../image/OrcCome.gif");
+    }
+
+    39% {
+        right: 60%;
+        background-image: url("../image/OrcCome.gif");
+    }
+
+    40% {
+        right: 60%;
+        background-image: url("../image/orc-attack-50-2700.gif");
+    }
+
+    60% {
+        right: 60%;
+        background-image: url("../image/orc-attack-50-2700.gif");
+    }
+
+    61% {
+        right: 60%;
+        background-image: url("../image/OrcCome-revers.gif");
+    }
+
+    99% {
+        right: 20%;
+        background-image: url("../image/OrcCome-revers.gif");
+    }
+
+    100% {
+        right: 20%;
+        background-image: url("../image/OrcStand.gif");
+    }
+}
+
+@keyframes animatePlayerAttack2 {
+    0% {
+        transition-property: opacity;
+        left: 20%;
+        opacity: 1;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    20% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 77%;
+        background-image: url("../image/gandalf-attack-long-60-2600-reverse.gif");
+    }
+
+    27% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 77%;
+        background-image: url("../image/gandalf-attack-long-60-2600-reverse.gif");
+    }
+
+    30% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 72%;
+        background-image: url("../image/gandalf-attack-long-60-2600-reverse.gif");
+    }
+
+    70% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 72%;
+        background-image: url("../image/gandalf-attack-long-60-2600-reverse.gif");
+    }
+
+    80% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 72%;
+        background-image: url("../image/gandalf-attack-long-60-2600-reverse.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+}
+
+@keyframes animatePlayerAttack3 {
+    0% {
+        transition-property: opacity;
+        left: 20%;
+        opacity: 1;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    20% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 59%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    27% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 59%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    30% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 59%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    70% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 59%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    80% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 59%;
+        background-image: url("../image/gandalf-attack-long-60-2600.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 20%;
+        background-image: url("../image/gandalf-stand-125.gif");
+    }
+}
+
+@keyframes animateNazgulAttack1 {
+    0% {
+        left: 80%
+    }
+
+    15% {
+        left: 23%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    85% {
+        left: 23%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    100% {
+        left: 80%;
+    }
+}
+
+@keyframes animateNazgulAttack2 {
+    0% {
+        transition-property: opacity;
+        right: 20%;
+        opacity: 1;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    20% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 79%;
+        background-image: url("../image/nazgulAttack-back.gif");
+    }
+
+    27% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 79%;
+        background-image: url("../image/nazgulAttack-back.gif");
+    }
+
+    30% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 74%;
+        background-image: url("../image/nazgulAttack-back.gif");
+    }
+
+    70% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 74%;
+        background-image: url("../image/nazgulAttack-back.gif");
+    }
+
+    80% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 74%;
+        background-image: url("../image/nazgulAttack-back.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+}
+
+@keyframes animateNazgulAttack3 {
+    0% {
+        transition-property: opacity;
+        right: 20%;
+        opacity: 1;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    20% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 59%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    27% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 59%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    30% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 59%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    70% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 59%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    80% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 59%;
+        background-image: url("../image/nazgulAttack.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 20%;
+        background-image: url("../image/nazgulStand.gif");
+    }
+}
+
+@keyframes animateKingNazgulAttack1 {
+    0% {
+        right: 20%
+    }
+
+    15% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        right: 57%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    85% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        right: 57%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    100% {
+        right: 20%;
+    }
+}
+
+@keyframes animateKingNazgulAttack2 {
+    0% {
+        transition-property: opacity;
+        right: 20%;
+        opacity: 1;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    20% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 77%;
+        background-image: url("../image/nazgul-king-attack-back.gif");
+    }
+
+    27% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 77%;
+        background-image: url("../image/nazgul-king-attack-back.gif");
+    }
+
+    30% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 72%;
+        background-image: url("../image/nazgul-king-attack-back.gif");
+    }
+
+    70% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 72%;
+        background-image: url("../image/nazgul-king-attack-back.gif");
+    }
+
+    80% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 72%;
+        background-image: url("../image/nazgul-king-attack-back.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+}
+
+@keyframes animateKingNazgulAttack3 {
+    0% {
+        transition-property: opacity;
+        right: 20%;
+        opacity: 1;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    19% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    20% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 50%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    27% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 50%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    30% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 50%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    70% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 50%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    80% {
+        width: 315px;
+        height: 225px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 50%;
+        background-image: url("../image/nazgul-king-attack.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 20%;
+        background-image: url("../image/nazgul-king-stand.gif");
+    }
+}
+
+@keyframes animateSauronAttack1 {
+    0% {
+        right: 20%
+    }
+
+    15% {
+        width: 470px;
+        height: 370px;
+        background-size: 100% 100%;
+        right: 50%;
+        background-image: url("../image/sauron-attack.gif");
+    }
+
+    85% {
+        width: 470px;
+        height: 370px;
+        background-size: 100% 100%;
+        right: 50%;
+        background-image: url("../image/sauron-attack.gif");
+    }
+
+    100% {
+        right: 20%;
+    }
+}
+
+@keyframes animateSauronAttack2 {
+    0% {
+        transition-property: opacity;
+        right: 20%;
+        opacity: 1;
+        background-image: url("../image/sauron-stand.gif");
+    }
+
+    19% {
+        width: 240px;
+        height: 290px;
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/sauron-stand.gif");
+    }
+
+    20% {
+        width: 500px;
+        height: 400px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 72%;
+        background-image: url("../image/sauron-attack-back.gif");
+    }
+
+    27% {
+        width: 500px;
+        height: 400px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 72%;
+        background-image: url("../image/sauron-attack-back.gif");
+    }
+
+    30% {
+        width: 500px;
+        height: 400px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 67%;
+        background-image: url("../image/sauron-attack-back.gif");
+    }
+
+    70% {
+        width: 500px;
+        height: 400px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 1;
+        right: 67%;
+        background-image: url("../image/sauron-attack-back.gif");
+    }
+
+    80% {
+        width: 500px;
+        height: 400px;
+        background-size: 100% 100%;
+        transition-property: opacity;
+        opacity: 0;
+        right: 67%;
+        background-image: url("../image/sauron-attack-back.gif");
+    }
+
+    81% {
+        transition-property: opacity;
+        opacity: 0;
+        right: 20%;
+        background-image: url("../image/sauron-stand.gif");
+    }
+
+    100% {
+        transition-property: opacity;
+        opacity: 1;
+        right: 20%;
+        background-image: url("../image/sauron-stand.gif");
+    }
+}
+
+@keyframes animateSauronAttack3 {
+    0% {
+        right: 20%;
+        background-image: url("../image/sauron-come.gif");
+    }
+
+    39% {
+        right: 50%;
+        background-image: url("../image/sauron-come.gif");
+    }
+
+    40% {
+        width: 450px;
+        height: 350px;
+        background-size: 100% 100%;
+        right: 50%;
+        background-image: url("../image/sauron-attack.gif");
+    }
+
+    60% {
+        width: 450px;
+        height: 350px;
+        background-size: 100% 100%;
+        right: 50%;
+        background-image: url("../image/sauron-attack.gif");
+    }
+
+    61% {
+        right: 50%;
+        background-image: url("../image/sauron-come-back.gif");
+    }
+
+    99% {
+        right: 20%;
+        background-image: url("../image/sauron-come-back.gif");
+    }
+
+    100% {
+        right: 20%;
+        background-image: url("../image/sauron-stand.gif");
+    }
+}
+
+@keyframes animatePlayerEpicAttack1 {
+    0% {
+        transition-property: opacity;
+        left: 25%;
+        opacity: 0;
+    }
+
+    10% {
+        transition-property: opacity;
+        opacity: 1;
+    }
+
+    84% {
+        transition-property: opacity;
+        opacity: 1;
+        left: 53%;
+        background-image: url("../image/fireball.gif");
+    }
+
+    85% {
+        left: 60%;
+        width: 400px;
+        height: 300px;
+        background-image: url("../image/fire-bang-big.gif");
+        bottom: 15%;
+    }
+
+    100% {
+        left: 60%;
+        width: 400px;
+        height: 300px;
+        background-image: url("../image/fire-bang-big.gif");
+        bottom: 15%;
+    }
+}
+
+@keyframes animatePlayerEpicAttack2 {
+    0% {
+        transition-property: opacity;
+        left: 30%;
+        opacity: 0;
+    }
+
+    10% {
+        transition-property: opacity;
+        left: 30%;
+        opacity: 1;
+    }
+
+    20% {
+        left: 35%;
+        bottom: 130px;
+    }
+
+    30% {
+        left: 40%;
+        bottom: 180px;
+    }
+
+    35% {
+        left: 37%;
+        bottom: 230px;
+    }
+
+    40% {
+        left: 40%;
+        bottom: 280px;
+    }
+
+    45% {
+        left: 47%;
+        bottom: 230px;
+    }
+
+    50% {
+        left: 57%;
+        bottom: 150px;
+    }
+
+    55% {
+        left: 58%;
+        bottom: 70px;
+        background-image: url("../image/vortex-30-600.gif");
+    }
+
+    65% {
+        left: 57%;
+        bottom: 40px;
+        width: 400px;
+        height: 300px;
+        background-image: url("../image/bang-blue.gif");
+    }
+
+    100% {
+        left: 57%;
+        width: 400px;
+        height: 300px;
+        background-image: url("../image/bang-blue.gif");
+        bottom: 40px;
+    }
+}
+
+@keyframes animatePlayerEpicAttack3 {
+    0% {
+        transition-property: opacity;
+        bottom: 20%;
+        left: 60%;
+        opacity: 0;
+    }
+
+    10% {
+        transition-property: opacity;
+        bottom: 10%;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+        bottom: 10%;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: 20%;
+        left: 60%;
+    }
+}
+
+@keyframes animatePlayerPotions {
+    0% {
+        transition-property: opacity;
+        bottom: 40%;
+        opacity: 0;
+    }
+
+    10% {
+        transition-property: opacity;
+        bottom: 35%;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+        bottom: 35%;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: 40%;
+    }
+}
+
+@keyframes animateDie {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        transition-property: opacity;
+        opacity: 1;
+    }
+
+    75% {
+        transition-property: opacity;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: url("../image/background.jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+    font-family: anironregular, 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.enter-arena-left {
+    left: 5%;
+    transition: transform 5s;
+    transform: translateX(220px);
+    position: absolute;
+    bottom: 15%;
+}
+
+.enter-arena-right {
+    transition: transform 5s;
+    transform: translateX(-220px);
+    position: absolute;
+    bottom: 15%;
+}
+
+.player-come {
+    width: 170px;
+    height: 242px;
+    background-size: 100% 100%;
+    background-image: url("../image/gandalf-stand-125.gif");
+}
+
+.player-stand {
+    width: 170px;
+    height: 242px;
+    background-size: 100% 100%;
+    background-image: url("../image/gandalf-stand-125.gif");
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+}
+
+.player-epyc-attack {
+    background-image: url("../image/attack-new-150-1650.gif");
+}
+
+.orc-come {
+    width: 213px;
+    height: 148px;
+    background-image: url("../image/OrcCome.gif");
+    bottom: 15%;
+    right: 0px;
+}
+
+.orc-stand {
+    width: 213px;
+    height: 148px;
+    background-image: url("../image/OrcStand.gif");
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+}
+
+.Nazgul-come {
+    width: 170px;
+    height: 180px;
+    background-size: 100% 100%;
+    background-image: url("../image/nazgulStand.gif");
+    bottom: 15%;
+    right: 0px;
+}
+
+.Nazgul-stand {
+    width: 170px;
+    height: 180px;
+    background-size: 100% 100%;
+    background-image: url("../image/nazgulStand.gif");
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+}
+
+.King-Nazgul-come {
+    width: 170px;
+    height: 225px;
+    background-size: 100% 100%;
+    background-image: url("../image/nazgul-king-stand.gif");
+    bottom: 15%;
+    right: 0px;
+}
+
+.King-Nazgul-stand {
+    width: 200px;
+    height: 210px;
+    background-size: 100% 100%;
+    background-image: url("../image/nazgul-king-stand.gif");
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+}
+
+.Sauron-come {
+    width: 250px;
+    height: 290px;
+    background-size: 100% 100%;
+    background-image: url("../image/sauron-come.gif");
+    bottom: 15%;
+    right: 0px;
+}
+
+.Sauron-stand {
+    width: 240px;
+    height: 290px;
+    background-size: 100% 100%;
+    background-image: url("../image/sauron-stand.gif");
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+}
+
+.button-run {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 7%;
+    bottom: 1.5%;
+    width: 16%;
+    height: 5%;
+    line-height: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.button-run:hover{
+    background-color: rgba(77, 137, 4, 0.3);
+    box-shadow: 0px 0px 40px rgba(118, 179, 35, 0.9);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.select-action {
+    width: 365px;
+    height: 412px;
+    position: absolute;
+    left: calc(50% - 365px/2);
+    bottom: 0%;
+    background-image: url("../image/textura.png");
+    background-size: 100% 100%;
+    display: none;
+    opacity: 0;
+    transition-duration: 1s;
+    z-index: 100;
+}
+
+.menu-action-title {
+    position: relative;
+    left: 11%;
+    top: 20%;
+    width: 285px;
+    height: 40px;
+    background-image: url("../image/menu-act-title-background.png");
+    background-size: 100% 100%;
+    color: wheat;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 4rem;
+}
+
+.menu-action-type-act {
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu-action-type-container {
+    margin-top: 27%;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-button,
+.concrete-type-act-button {
+    height: 35px;
+    width: 200px;
+    background-image: url("../image/type-act-button-background.png");
+    background-size: 100% 100%;
+    color: wheat;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.menu-button:hover,
+.concrete-type-act-button:hover,
+.input-answer:hover {
+    font-size: 1.6rem;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.type-act-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.9);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type-act-icon-attack {
+    background-image: url("../image/action_icons/act-icon-attack.jpg");
+}
+
+.type-act-icon-epic-attack {
+    background-image: url("../image/action_icons/act-icon-epic-attack.jpg");
+}
+
+.type-act-icon-potions {
+    background-image: url("../image/action_icons/act-icon-potions.jpg");
+}
+
+.type-attack-icon-attack1{
+    background-image: url("../image/action_icons/act-icon-attack1.jpg");
+}
+
+.type-attack-icon-attack2 {
+    background-image: url("../image/action_icons/act-icon-attack2.jpg");
+}
+
+.type-attack-icon-attack3 {
+    background-image: url("../image/action_icons/act-icon-attack3.jpg");
+}
+
+.type-attack-icon-epic-attack1{
+    background-image: url("../image/action_icons/act-icon-epic-attack1.jpg");
+}
+
+.type-attack-icon-epic-attack2 {
+    background-image: url("../image/action_icons/act-icon-epic-attack2.jpg");
+}
+
+.type-attack-icon-epic-attack3 {
+    background-image: url("../image/action_icons/act-icon-epic-attack3.jpg");
+}
+
+.type-attack-icon-spell1{
+    background-image: url("../image/action_icons/act-icon-spell1.jpg");
+}
+
+.type-attack-icon-spell2 {
+    background-image: url("../image/action_icons/act-icon-spell2.jpg");
+}
+
+.type-attack-icon-spell3 {
+    background-image: url("../image/action_icons/act-icon-spell3.jpg");
+}
+
+.select-action-close {
+    background-image: url("../image/exit.png");
+    width: 21px;
+    height: 21px;
+    background-size: 100% 100%;
+    position: relative;
+    left: 330px;
+    top: 35px;
+    cursor: pointer;
+}
+
+.task-container {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    left: calc(50% - 600px/2);
+    bottom: 0%;
+    background-image: url("../image/textura.png");
+    background-size: 100% 100%;
+    transition-duration: 1s;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+}
+
+.task-container .select-action-close {
+    width: 25px;
+    height: 25px;
+    left: 555px;
+    top: 43px;
+}
+
+.task-container .menu-action-title {
+    width: 465px;
+}
+
+.question-container {
+    background-image: url('../image/question-backgrond.png');
+    background-size: 100% 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0px 25px;
+    margin: 22% auto 30px auto;
+    max-width: 355px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.9);
+}
+
+.select-action-animate-appear {
+    transition-property: transform, opacity;
+    transform: translateY(-150px);
+    opacity: 1;
+}
+
+.task-container-animate-appear {
+    transition-property: transform, opacity;
+    transform: translateY(-90px);
+    opacity: 1;
+}
+
+.animate-appear-results-players {
+    transition-property: transform, opacity;
+    transform: translateY(-90px);
+    opacity: 1;
+    display: block;
+}
+
+.modal-window-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    opacity: 0.2;
+    display: none;
+}
+
+.answer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answerOption {
+    height: 35px;
+    padding: 0px 25px;
+    width: max-content;
+    min-width: 150px;
+    background-image: url("../image/type-act-button-background.png");
+    background-size: 100% 100%;
+    color: wheat;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.answerOption:hover {
+    font-size: 1.6rem;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.input-answer {
+    height: 35px;
+    width: 200px;
+    background-image: url("../image/Rounded-Rectangle-1-copy-2.png");
+    background-size: 100% 100%;
+    color: wheat;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 20px;
+    font-family: anironregular, 'Times New Roman', Times, serif;
+}
+
+.input-answer::placeholder {
+    font-size: 1.2rem;
+}
+
+.input-answer:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    cursor: text;
+}
+
+.puzzle-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px auto 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.9);
+}
+
+.puzzle-parts {
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%;
+    margin: 0px;
+}
+
+.audio-player-buttons-container {
+    position: absolute;
+    display: flex;
+    left: 8%;
+    top: 0.5%;
+}
+
+.audio-player-button {
+    width: 42px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.audio-player-button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 40px rgba(118, 179, 35, 0.9);
+}
+
+.taskResultContainer {
+    position: absolute;
+    width: 450px;
+    height: 200px;
+    right: 0px;
+    top: calc(50% - 100px);
+    background-image: url('../image/question-backgrond.png');
+    background-size: 100% 100%;
+    z-index: 200;
+    text-align: center;
+    line-height: 200px;
+    font-size: 2.8rem;
+    font-family: anironbold, 'Times New Roman', Times, serif;
+    box-shadow: 30px -30px 40px 10px rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.taskResultContainer-animate-appear {
+    animation: changePositionResultContainer 4s linear;
+}
+
+.colorDarkRed {
+    color: darkred;
+    text-shadow: 1px 1px 9px #000;
+}
+
+.personages-status-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 25%;
+    top: 0.3%;
+    width: 51%;
+    height: 5%;
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.personages-status {
+    display: flex;
+    justify-content: space-between;
+    width: 29%;
+    height: 100%;
+    margin-right: 10px;  
+}
+
+.table-results-container {
+    font-size: 1.3em;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.animate-player-attack1 {
+    animation: animatePlayerAttack1 4s linear;
+}
+
+.animate-player-attack2 {
+    animation: animatePlayerAttack2 8s linear;
+}
+
+.animate-player-attack3 {
+    animation: animatePlayerAttack3 8s linear;
+}
+
+.animate-player-epic-attack1{
+    animation: animatePlayerEpicAttack1 3s linear;
+    width: 200px;
+    height: 100px;
+    background-size: 100% 100%;
+    background-image: url("../image/fireball.gif");
+    position: absolute;
+    bottom: 100px;
+}
+
+.animate-player-epic-attack2{
+    animation: animatePlayerEpicAttack2 7s linear;
+    width: 200px;
+    height: 300px;
+    background-size: 100% 100%;
+    background-image: url("../image/vortex-30-600.gif");
+    position: absolute;
+    bottom: 50px;
+}
+
+.animate-player-epic-attack3{
+    animation: animatePlayerEpicAttack3 8s linear;
+    width: 350px;
+    height: 380px;
+    background-size: 100% 100%;
+    background-image: url("../image/lightning.gif");
+    position: absolute;
+    left: 60%;
+}
+
+.animate-player-potions1{
+    animation: animatePlayerPotions 6s linear;
+    width: 300px;
+    height: 200px;
+    background-size: 100% 100%;
+    background-image: url("../image/potions1.gif");
+    position: absolute;
+    left: 14%;
+}
+
+.animate-player-potions2{
+    animation: animatePlayerPotions 6s linear;
+    width: 400px;
+    height: 555px;
+    background-size: 100% 100%;
+    background-image: url("../image/potions2.gif");
+    position: absolute;
+    left: 12%;
+}
+
+.animate-player-potions3{
+    animation: animatePlayerPotions 6s linear;
+    width: 400px;
+    height: 300px;
+    background-size: 100% 100%;
+    background-image: url("../image/potions3.gif");
+    position: absolute;
+    left: 10%;
+}
+
+.animate-die {
+    animation: animateDie 8s linear;
+}
+
+.animate-orc-attack1,
+.animate-orc-attack2,
+.animate-orc-attack3 {
+    animation: animateOrcAttack1 8s linear;
+}
+
+.animate-Nazgul-attack1 {
+    animation: animateNazgulAttack1 4s linear;
+}
+
+.animate-Nazgul-attack2 {
+    animation: animateNazgulAttack2 8s linear;
+}
+
+.animate-Nazgul-attack3 {
+    animation: animateNazgulAttack3 8s linear;
+}
+
+.animate-King-Nazgul-attack1 {
+    animation: animateKingNazgulAttack1 4s linear;
+}
+
+.animate-King-Nazgul-attack2 {
+    animation: animateKingNazgulAttack2 8s linear;
+}
+
+.animate-King-Nazgul-attack3 {
+    animation: animateKingNazgulAttack3 8s linear;
+}
+
+.animate-Sauron-attack1 {
+    animation: animateSauronAttack1 4s linear;
+}
+
+.animate-Sauron-attack2 {
+    animation: animateSauronAttack2 8s linear;
+}
+
+.animate-Sauron-attack3 {
+    animation: animateSauronAttack3 8s linear;
+}
+
+.displayBlock {
+    display: block;
+}

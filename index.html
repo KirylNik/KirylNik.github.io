@@ -4,23 +4,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
         <title>The Lord of the Rings - Turn-based game</title>
-        <link rel="stylesheet" href="lp_data/mainstyle.css">
-        <link rel="stylesheet" href="lp_data/font-awesome.min.css">
-        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="lp_data/desktopscreen.css">
-        <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1023px)" href="lp_data/tabletscreen.css">
-        <link rel="stylesheet" media="screen and (max-width: 767px) and (min-width: 401px)" href="lp_data/mobilescreen.css">
-        <link rel="stylesheet" media="screen and (max-width: 400px)" href="lp_data/tinyscreen.css">
+        <link rel="stylesheet" href="lp_data/styles/mainstyle.css">
+        <link rel="stylesheet" href="lp_data/styles/font-awesome.min.css">
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="lp_data/styles/desktopscreen.css">
+        <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1023px)" href="lp_data/styles/tabletscreen.css">
+        <link rel="stylesheet" media="screen and (max-width: 767px) and (min-width: 401px)" href="lp_data/styles/mobilescreen.css">
+        <link rel="stylesheet" media="screen and (max-width: 400px)" href="lp_data/styles/tinyscreen.css">
     </head>
     <body>
-        <audio id='audio0' autoplay><source src="audio/00.mp3" type="audio/mpeg"></audio>
+        <audio id='audio0' autoplay><source src="lp_data/audio/00.mp3" type="audio/mpeg"></audio>
         <header class="header" id="header">
-            <div class="logo"><a href="https://google.com/#"></a></div>
+            <a href="https://kirylnik.github.io/" class="logo"></a>
             <nav class="nav-header">
                 <div class="menu-toggle" id="menuToggle">≡</div>
                 <ul class="nav-list hidden" id="navList">
-                    <li><a href="https:///google.com/#shots">Screenshots</a></li>
-                    <li><a href="https:///google.com/#play">Let's Play</a></li>
-                    <li><a href="https:///google.com/#developer">Developer</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#registration">Let's Play</a></li>
+                    <li><a href="#developer">Developer</a></li>
                 </ul>
               </nav>
         </header>
@@ -28,47 +28,50 @@
             <section class="section-promo">
                 <h1>The Lord of the Rings</h1>
                 <h3>Immerse yourself in the world of Lord of the Rings with this game</h3>
-                <a class="button" href="https:///google.com/#play">Try now</a>
+                <a class="button" href="#registration">Try now</a>
             </section>
+            <a name="screenshots"></a>
             <section class="section-screenshots" id="section-screenshots">
                 <h2>Screenshots of the game</h2>
                 <h3>Familiarize yourself with the gameplay</h3>
                 <div class="screen-gallery" id="gallery">
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_1"></div>
-                        <img class="screenshot-preview" src="./images/screen_1.jpg" alt="Choosing spells">
+                        <div class="screenshot-preview-container" id="screenshot1"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot1.jpg" alt="Screen of battle">
                     </div>
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_2"></div>
-                        <img class="screenshot-preview" src="./images/screen_2.jpg" alt="Task">
+                        <div class="screenshot-preview-container" id="screenshot2"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot2.jpg" alt="The action selection menu">
                     </div>
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_3"></div>
-                        <img class="screenshot-preview" src="./images/screen_3.jpg" alt="Fight">
+                        <div class="screenshot-preview-container" id="screenshot3"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot3.jpg" alt="The menu for selecting the answer to the question">
                     </div>
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_4"></div>
-                        <img class="screenshot-preview" src="./images/screen_4.jpg" alt="Choose a hero">
+                        <div class="screenshot-preview-container" id="screenshot4"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot4.jpg" alt="The puzzle assembly window">
                     </div>
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_5"></div>
-                        <img class="screenshot-preview" src="./images/screen_5.jpg" alt="Choose a hero">
+                        <div class="screenshot-preview-container" id="screenshot5"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot5.jpg" alt="Attack spell caused by Gandalf">
                     </div>
                     <div class="screenshot-container">
-                        <div class="screenshot-preview-container" id="screen_6"></div>
-                        <img class="screenshot-preview" src="./images/screen_6.jpg" alt="Choose a hero">
+                        <div class="screenshot-preview-container" id="screenshot6"></div>
+                        <img class="screenshot-preview" src="lp_data/images/screenshot6.jpg" alt="A cure spell caused by Gandalf">
                     </div>
                 </div>
             </section>
+            <a name="registration"></a>
             <section class="section-registration">
-                <h2>Play right now</h2>
+                <h2>Let's Play</h2>
                 <h3>Complete registration and play!</h3>
-                <form class="registration-form" action="" method="get">
+                <form class="registration-form" action="" method="get" name="registration-form">
                     <span class="registration-form-label">Inter your name:</span>
-                    <input type="text" placeholder="your name*" class="registration-form-input" name="" id="input-nickname" required>
-                    <a class="button" href="https:///google.com/game/">Play</a>
+                    <input type="text" placeholder="your name*" class="registration-form-input" name="registration-form-name" id="input-nickname" required>
+                    <a class="button" href="game.html" id="buttonStart">Play</a>
                 </form>
             </section>
+            <a name="developer"></a>
             <section class="section-developer">
                 <h2>Developer</h2>
                 <h3>The author of the game.</h3>
@@ -85,9 +88,9 @@
       <footer class="footer">
             <p>Created by Kiryl Nikalaichuk. 2018</p>
       </footer>
-      <div class="modal-window-wrapper disable"  id="modalWindowContainer"><!--ref-->
-            <div id="modalWindow" class="modal-window"><!--ref--></div><!--ref-->
+      <div class="modal-window-wrapper disable"  id="modalWindowContainer">
+            <div id="modalWindow" class="modal-window"></div>
       </div>
-      <script src="lp_data/scripts.js"></script>
+      <script src="lp_data/scripts/scripts.js"></script>
     </body>
 </html>
