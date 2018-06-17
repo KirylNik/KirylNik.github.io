@@ -13,6 +13,7 @@ class Main {
         this.orcNames;
         this.listEnemies;
     }
+
     init () {
         this.loadData();
         this.player = new Player('Gandalf', 100);
@@ -31,6 +32,7 @@ class Main {
         this.addHundlerAnswerContainer();
         this.updateStatusBar();
     }
+
     loadData () {
         loadQuestions()
         .then(() => loadOrcNames())
@@ -303,7 +305,6 @@ class Personage {
 class Player extends Personage {
     
     constructor(role, health) {
-
         super(role, health);
     }
 }
