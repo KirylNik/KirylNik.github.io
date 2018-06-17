@@ -1,10 +1,3 @@
-//Download JSON with questions, names of orcs and list of enemies
-  // Objects for the loaded data.
-  let questions;
-  let copyQuestions = [];
-  let orcNames;
-  let listEnemies;
-
 // The class that controls the game.
 class Main {
 
@@ -15,6 +8,10 @@ class Main {
         this.currentTask;
         this.currentStep;
         this.quantityKilledEnemy = 0;
+        this.copyQuestions = [];
+        this.questions;
+        this.orcNames;
+        this.listEnemies;
     }
     init () {
         this.loadData();
@@ -835,34 +832,40 @@ soundAttackEnemy = () => {
     audio.autoplay = true; // Автоматически запускаем
 }
 
-  // Function for loading JSON.
-  function getJSON (url/*, callback*/) {
-    return fetch(url)
-        .then((response) => response.json())
-  };
+    // Function for loading JSON.
+    function getJSON (url/*, callback*/) {
+        return fetch(url)
+            .then((response) => response.json())
+    };
 
-  function loadQuestions () {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/questions.json')
-      .then((data) => {questions = data})
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
+    function loadQuestions () {
+        return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/questions.json')
+        .then((data) => {questions = data})
+        .catch((error) => alert('Something went wrong: ' + error))
+    }
 
-  function loadOrcNames () {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/names-orc.json')
-      .then((data) => {orcNames = data})
-      .then(() => game.checkNameEnemy())
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
+    function loadOrcNames () {
+        return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/names-orc.json')
+        .then((data) => {orcNames = data})
+        .then(() => game.checkNameEnemy())
+        .catch((error) => alert('Something went wrong: ' + error))
+    }
 
-  function loadListEnemy () {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
-      .then((data) => {listEnemies = data})
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
+    function loadListEnemy () {
+        return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
+        .then((data) => {listEnemies = data})
+        .catch((error) => alert('Something went wrong: ' + error))
+    }
+
+    // Objects for the loaded data.
+    var questions;
+    var orcNames;
+    var listEnemies;
+    var copyQuestions = [];
 
 
 
-// Create a new game.
-let game = new Main();
-// Starting a new game.
-game.init();
+    // Create a new game.
+    let game = new Main();
+    // Starting a new game.
+    game.init();
