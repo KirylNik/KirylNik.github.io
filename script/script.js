@@ -250,11 +250,11 @@ class Personage {
             typePersonageAttack = game.currentStep;
         }
 
-        this.next = () => {
+        this.hundlerAnimationEnd = () => {
             personageContainer.classList.remove(`animate-${typePersonageAttack}-${this.selectedAction}`);
         };
 
-        personageContainer.addEventListener('animationend', this.next);
+        personageContainer.addEventListener('animationend', this.hundlerAnimationEnd);
         personageContainer.classList.add(`animate-${typePersonageAttack}-${this.selectedAction}`);
     }
 
@@ -264,12 +264,12 @@ class Personage {
         effectContainer.id = 'effectContainer';
         let currentStep = game.currentStep;
 
-        this.next = () => {
+        this.hundlerAnimationEnd = () => {
             let effectContainer = document.getElementById('effectContainer');
             document.body.removeChild(effectContainer);
             personageContainer.classList.remove(`${currentStep}-epyc-attack`);
         };
-        effectContainer.addEventListener('animationend', this.next);
+        effectContainer.addEventListener('animationend', this.hundlerAnimationEnd);
         document.body.append(effectContainer);
         personageContainer.classList.add(`${game.currentStep}-epyc-attack`);
         effectContainer.classList.add(`animate-${game.currentStep}-${this.selectedAction}`);
@@ -279,11 +279,11 @@ class Personage {
         let effectContainer = document.createElement('div');
         effectContainer.id = 'effectContainer';
 
-        this.next = () => {
+        this.hundlerAnimationEnd = () => {
             let effectContainer = document.getElementById('effectContainer');
             document.body.removeChild(effectContainer);
         };
-        effectContainer.addEventListener('animationend', this.next);
+        effectContainer.addEventListener('animationend', this.hundlerAnimationEnd);
         document.body.append(effectContainer);
         effectContainer.classList.add(`animate-${game.currentStep}-${this.selectedAction}`);
     }
@@ -291,11 +291,11 @@ class Personage {
     die (personage = 'player') {
         return new Promise((resolve, reject) => {
             let personageContainer = document.getElementById(personage);
-            this.next = () => {
+            this.hundlerAnimationEnd = () => {
                 document.body.removeChild(personageContainer);
                 resolve();
             };
-            personageContainer.addEventListener('animationend', this.next);
+            personageContainer.addEventListener('animationend', this.hundlerAnimationEnd);
             personageContainer.classList.add('animate-die');
         })
     }
@@ -630,11 +630,13 @@ class Task {
             setTimeout(() => {
                 game.currentStep = 'player';
                 game.player.act();
+                soundAttackPlayer();
             }, 6000)
         } else {
             this.displayTaskResult('Incorrect answer!');
             setTimeout(() => {
                 game.giveTurnEnemy();
+                soundAttackEnemy();
             }, 6000)
         }
     }
@@ -851,6 +853,18 @@ getTimeDifference = (old, young) => {
 
     result = `${minutes}:${seconds}`;
     return result;
+}
+
+soundAttackPlayer = () => {
+    let audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = 'audio/YouShallNotPass.mp3'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+}
+
+soundAttackEnemy = () => {
+    let audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = 'audio/NazgulAudio.mp3'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
 }
 
 
