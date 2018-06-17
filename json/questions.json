@@ -1,0 +1,115 @@
+[
+    {
+        "Type":"Enter answer",
+        "Question":"Who was entrusted with the mission of destroying the Ring of Omnipotence?",
+        "Answer":"frodo"
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"Who was Frodo Baggins?",
+         "Answer":"hobbit"
+    },
+    {
+        "Type":"Select answer",
+        "Question":"What was the name of the detachment assembled to destroy the ring?",
+        "Answer":"The Brotherhood of the Ring",
+        "Options":["The Brotherhood of the Ring","The Brotherhood of Jewelers","Brotherhood of Frodo"]
+    },
+    {
+        "Type":"Select answer",
+        "Question":"What gift did Frodo receive from Galadriel?",
+        "Answer":"Star Light","Options":["Curl of hair","Sword","Star Light"]
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"Who wanted to take Rohan and stormed Helmov's back?",
+        "Answer":"saruman"
+    },
+    {
+        "Type":"Select answer",
+        "Question":"Who helped the hobbits to escape after destroying the ring?",
+        "Answer":"Eagles",
+        "Options":["Gollum","Gnomes","Eagles"]
+    },{
+        "Type":"Select answer",
+        "Question":"Hobbits live in a locality called ...?",
+        "Answer":"Shire",
+        "Options":["Shire","Rivendell","Mordor"]
+    },
+    {
+        "Type":"Select answer",
+        "Question":"Who was the guide of Frodo and Sam to the Fiery Mountain of Orodruin?",
+        "Answer":"Gollum",
+        "Options":["Boromir","Gollum","Faramir"]
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"Gollum used to be in the past ...",
+        "Answer":"hobbit"
+    },
+    {
+        "Type":"Select answer",
+        "Question":"What happens to the one who puts the Ring of Omnipotence on the finger?",
+        "Answer":"He becomes invisible",
+        "Options":["He becomes invulnerable","He becomes invisible","He becomes huge"]
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"What was the name of Gollum before the Ring came to him?",
+        "Answer":"smeagol"
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"What was the name of Lord of the Rings?",
+        "Answer":"sauron"
+    },
+    {
+        "Type":"Enter answer",
+        "Question":"Who actually destroyed the ring?",
+        "Answer":"gollum"
+    },
+    {
+        "Type":"Select answer",
+        "Question":"Where did the Lord of the Rings take pictures?",
+        "Answer":"New Zealand","Options":["Baranavichy","USA","New Zealand"]
+    },
+    {
+        "Type":"Select answer",
+        "Question":"What do you think, how many athers were involved in various mass scenes?",
+        "Answer":"20 000",
+        "Options":["2 000","4 000","20 000"]
+    },
+    {
+        "Type":"Answer the audio question",
+        "Question":"Listen to the audio question.",
+        "AudioQuestion":"What was the guardian of Frodo?",
+        "Answer":"ring"
+    },
+    {
+        "Type":"Answer the audio question",
+        "Question":"Listen to the audio question.",
+        "AudioQuestion":"Is it true that Hobbits do not usually wear shoes?",
+        "Answer":"yes"
+    },
+    {
+        "Type":"Answer the audio question",
+        "Question":"Listen to the audio question.",
+        "AudioQuestion":"Who forged Оne Ring?",
+        "Answer":"sauron"
+    },
+    {
+        "Type":"Puzzle",
+        "CorrectOrder":"305214",
+        "Parts":["puzzle_01/puzzle_01_part02.jpg","puzzle_01/puzzle_01_part05.jpg","puzzle_01/puzzle_01_part04.jpg","puzzle_01/puzzle_01_part01.jpg","puzzle_01/puzzle_01_part06.jpg","puzzle_01/puzzle_01_part03.jpg"]
+    },
+    {
+        "Type":"Puzzle",
+        "CorrectOrder":"305214",
+        "Parts":["puzzle_02/puzzle_02_part02.jpg","puzzle_02/puzzle_02_part05.jpg","puzzle_02/puzzle_02_part04.jpg","puzzle_02/puzzle_02_part01.jpg","puzzle_02/puzzle_02_part06.jpg","puzzle_02/puzzle_02_part03.jpg"]
+    },
+    {
+        "Type":"Puzzle",
+        "CorrectOrder":"305214",
+        "Parts":["puzzle_03/puzzle_03_part02.jpg","puzzle_03/puzzle_03_part05.jpg","puzzle_03/puzzle_03_part04.jpg","puzzle_03/puzzle_03_part01.jpg","puzzle_03/puzzle_03_part06.jpg","puzzle_03/puzzle_03_part03.jpg"]
+    }
+]

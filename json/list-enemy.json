@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Nazgul",
+        "health":"75"
+    },
+    {
+        "name":"King Nazgul",
+        "health":"150"
+    },
+    {
+        "name":"Sauron",
+        "health":"200"
+    }
+]
