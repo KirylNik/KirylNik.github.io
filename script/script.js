@@ -17,20 +17,20 @@ let getJSON = function(url/*, callback*/) {
   }
 
   let loadQuestions = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/data-for-code-jam4/master/questions.json')
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
       .then((data) => {questions = data})
       .catch((error) => alert('Something went wrong: ' + error))
   }
 
   let loadOrcNames = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/data-for-code-jam4/master/names-orc.json')
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/names-orc.json')
       .then((data) => {orcNames = data})
       .then(() => game.checkNameEnemy())
       .catch((error) => alert('Something went wrong: ' + error))
   }
 
   let loadListEnemy = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/data-for-code-jam4/master/list-enemy.json')
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
       .then((data) => {listEnemies = data})
       .catch((error) => alert('Something went wrong: ' + error))
   }
