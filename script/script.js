@@ -1,4 +1,4 @@
-/* Загружаю JSON с вопросами */////////////////////////////////////////
+// Загружаю JSON с вопросами /////////////////////////////////////////
 // Функция для загрузки JSON.
 let getJSON = function(url/*, callback*/) {
     return fetch(url)
@@ -17,7 +17,7 @@ let getJSON = function(url/*, callback*/) {
   }
 
   let loadQuestions = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/questions.json')
       .then((data) => {questions = data})
       .catch((error) => alert('Something went wrong: ' + error))
   }
