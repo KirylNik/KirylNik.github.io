@@ -644,7 +644,7 @@ class Task {
         taskResultContainer.textContent = text;
         taskResultContainer.id = 'taskResultContainer';
         taskResultContainer.classList.add('taskResultContainer');
-        if (text === 'Incorrect answer!' || 'You lose!') {
+        if (text === 'Incorrect answer!' || text === 'You lose!') {
             taskResultContainer.classList.add('colorDarkRed');   
         }
         document.body.append(taskResultContainer);
