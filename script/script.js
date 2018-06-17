@@ -98,7 +98,7 @@ class Main {
                 goToResults();
             }, 4000);
         } else if (this.enemy.health <= 0 && this.enemy.name === 'Sauron') {
-            quantityKilledEnemy++;
+            this.quantityKilledEnemy++;
             this.enemy.die(this.enemy.enemyType);
             game.currentTask.displayTaskResult('You won!');
             setTimeout(() => {
@@ -106,7 +106,7 @@ class Main {
                 goToResults();
             }, 4000);
         } else if (this.enemy.health <= 0) {
-            quantityKilledEnemy++;
+            this.quantityKilledEnemy++;
             this.enemy.die(this.enemy.enemyType)
             .then(() => this.goNextRound());
             this.currentStep = 'enemy';
