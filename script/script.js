@@ -1,10 +1,10 @@
-// Загружаю JSON с вопросами /////////////////////////////////////////
-// Функция для загрузки JSON.
+//Download JSON with questions, names of orcs and list of enemies
+// Function for loading JSON.
 let getJSON = function(url/*, callback*/) {
     return fetch(url)
       .then((response) => response.json())
   };
-  // Объекты для данных.
+  // Objects for the loaded data.
   let questions;
   let copyQuestions = [];
   let orcNames;
@@ -35,11 +35,14 @@ let getJSON = function(url/*, callback*/) {
       .catch((error) => alert('Something went wrong: ' + error))
   }
 
-// Загружаем вопросы и имена орков.
-loadData()
+// Initiate a JSON download.
+    loadData()
 
-/* Класс, управляющий игрой *///////////////////////////////////////////////////
 
+
+
+
+// The class that controls the game.
 class Main {
 
     constructor () {
@@ -67,11 +70,11 @@ class Main {
         this.addHundlerAnswerContainer();
         this.updateStatusBar();
     }
-
+    // Create a new task for the player.
     createNewTask (event) {
         this.currentTask = new Task(event);
     }
-
+    // Update the names and health of the personages.
     updateStatusBar () {
         let playerNameContainer = document.getElementById('status-bar-player-name');
         let enemyNameContainer = document.getElementById('status-bar-enemy-name');
@@ -83,19 +86,19 @@ class Main {
         playerHeathContainer.textContent = game.player.health;
         enemyHeathContainer.textContent = game.enemy.health;
     }
-
+    // Go to the next move of the game.
     takeNextStep () {
         this.checkHealthPersonages();
-        setTimeout(() => (this.transferNextTurn()), 8000);  //////!!!!!!!!!!!!!!!!!!!
+        setTimeout(() => (this.transferNextTurn()), 8000);
     }
-
+    // Check the health of the personages and perform actions if someone died.
     checkHealthPersonages () {
         if (this.player.health <= 0) {
             this.player.die();
             game.currentTask.displayTaskResult('You lose!');
             setTimeout(() => {
                 savePlayerResult();
-                goToResults();
+                this.goToResults();
             }, 4000);
         } else if (this.enemy.health <= 0 && this.enemy.name === 'Sauron') {
             this.quantityKilledEnemy++;
@@ -103,12 +106,12 @@ class Main {
             game.currentTask.displayTaskResult('You won!');
             setTimeout(() => {
                 savePlayerResult();
-                goToResults();
+                this.goToResults();
             }, 4000);
         } else if (this.enemy.health <= 0) {
             this.quantityKilledEnemy++;
             this.enemy.die(this.enemy.enemyType)
-            .then(() => this.goNextRound());
+            .then(() => this.callNextEnemy());
             this.currentStep = 'enemy';
         }
     }
@@ -121,28 +124,28 @@ class Main {
             this.currentStep === 'player';
         }
     }
-
-    goNextRound () {
+    // Call the next enemy.
+    callNextEnemy () {
         this.enemy.createNextEnemy();
         this.enemy.enterArena();
         this.player.health = 100;
         this.updateStatusBar();
     }
-
+    // Pass the course to the enemy.
     giveTurnEnemy () {
         game.enemy.selectedTypeAction = 'attack';
         game.enemy.selectedAction = getRandomTypeAttack();
         game.currentStep = 'enemy';
         game.enemy.attack();
     }
-
+    // If the current enemy is an orc, but generate a name for it.
     checkNameEnemy () {
         if (this.enemy.enemyType === 'orc') {
             this.enemy.name = this.enemy.generateRandomName();
             this.updateStatusBar();
         }
     }
-
+    // Check if the level of health of one of the personages is negative and correct, if so.
     checkNegativeHealth () {
         if (game.player.health < 0) {
             game.player.health = 0;
@@ -152,7 +155,7 @@ class Main {
             game.enemy.health = 0;
         }
     }
-
+    // Add a handler for the response container.
     addHundlerAnswerContainer () {
         let answerContainer = document.getElementById('answer-container');
         this.hundlerAnswerContainer = (event) => {
@@ -186,10 +189,16 @@ class Main {
         };
         answerContainer.addEventListener('click', this.hundlerAnswerContainer);
     }
+    // Go to the results table window.
+    goToResults = () => {
+        createWindowResults();
+        fillWindowResults();
+        displayWindowResults();
+    }
 
 }
 
-/* Класс Персонаж *///////////////////////////////////////////////////////////
+// The personage class of the game.
 class Personage {
 
     constructor(name, health) {
@@ -198,12 +207,12 @@ class Personage {
         this.selectedTypeAction;
         this.selectedAction;
     }
-
+    // Go to the battle arena.
     enterArena () {
         this.creatPersonageContainer(this.enemyType); 
         this.animationEnterArena(this.enemyType);
     }
-
+    // Perform an attack or treatment action.
     act () {
         if (this.selectedTypeAction === 'potions') {
             this.getImpact();
@@ -212,7 +221,7 @@ class Personage {
         };
         game.takeNextStep();
     }
-
+    // Perform an attack action.
     attack () {
         let damage = calculateValueImpact(this.selectedTypeAction);
 
@@ -232,14 +241,14 @@ class Personage {
         game.updateStatusBar();
         game.checkHealthPersonages();
     }
-
+    // Get impact, damage, or treatment.
     getImpact () {
         let valueImpact = calculateValueImpact(this.selectedTypeAction);
         game.player.health += valueImpact;
         this.animateGetImpact();
         game.updateStatusBar();
     }
-
+    // Animate a simple pesrsonage attack.
     animateSimpleAttack () {
         let personageContainer = getPersonageContainer(this.enemyType);
         let typePersonageAttack;
@@ -257,12 +266,12 @@ class Personage {
         personageContainer.addEventListener('animationend', this.hundlerAnimationEnd);
         personageContainer.classList.add(`animate-${typePersonageAttack}-${this.selectedAction}`);
     }
-
+    // Animate the epic attack of the personage.
     animateEpicAttack () {
         let personageContainer = getPersonageContainer(this.enemyType);
         let effectContainer = document.createElement('div');
-        effectContainer.id = 'effectContainer';
         let currentStep = game.currentStep;
+        effectContainer.id = 'effectContainer';
 
         this.hundlerAnimationEnd = () => {
             let effectContainer = document.getElementById('effectContainer');
@@ -274,7 +283,7 @@ class Personage {
         personageContainer.classList.add(`${game.currentStep}-epyc-attack`);
         effectContainer.classList.add(`animate-${game.currentStep}-${this.selectedAction}`);
     }
-
+    // Animate the getting impact.
     animateGetImpact () {
         let effectContainer = document.createElement('div');
         effectContainer.id = 'effectContainer';
@@ -287,7 +296,7 @@ class Personage {
         document.body.append(effectContainer);
         effectContainer.classList.add(`animate-${game.currentStep}-${this.selectedAction}`);
     }
-
+    // Death of the personage.
     die (personage = 'player') {
         return new Promise((resolve, reject) => {
             let personageContainer = document.getElementById(personage);
@@ -299,19 +308,18 @@ class Personage {
             personageContainer.classList.add('animate-die');
         })
     }
-
-    // Получить контэйнер для персонажа
+    // Create a container for the personage.
     creatPersonageContainer (personage = 'player') {
         let personageContainer = document.createElement('div');
         personageContainer.id = personage;
         document.body.append(personageContainer);
     }
-    // Получить контэйнер для персонажа
+    // Set the animation output of the personage to the arena.
     animationEnterArena (personage = 'player') {
         setTimeout(function () {
             let personageContainer = document.getElementById(personage);
             personageContainer.classList.add(`${personage}-come`);
-            personage == 'player'    // Или лучше if ?
+            personage == 'player'
             ? personageContainer.classList.add('enter-arena-left')
             : personageContainer.classList.add('enter-arena-right');
         }, 0);
@@ -325,44 +333,33 @@ class Personage {
     }
 }
 
-// Класс Игрок
-
+// Class Player
 class Player extends Personage {
     
     constructor(role, health) {
 
         super(role, health);
     }
-
-    selectSpell () {
-
-    }
-
-    solveTask () {
-
-    }
 }
 
-// Класс Противник
-
+// Class Enemy
 class Enemy extends Personage {
     
     constructor(role, health, enemyType) {
         super(role, health);
         this.enemyType = enemyType;
     }
-
+    // Create a random name.
     generateRandomName () {
         let randomValueForName = Math.floor(Math.random() * orcNames["Names"].length);
         let randomValueForProperty = Math.floor(Math.random() * orcNames['Properties'].length);
-        
         let randomName = orcNames["Names"][randomValueForName];
         let randomProperty = orcNames['Properties'][randomValueForProperty];
 
         let resultName = `${randomProperty} Orc ${randomName}`;
         return resultName;
     }
-
+    // Create the next enemy.
     createNextEnemy () {
         let nextEnemyObj = listEnemies.shift();
         let enemyType = replaceBlanksOnDashes(nextEnemyObj.name);
@@ -370,9 +367,9 @@ class Enemy extends Personage {
     }
 }
 
-// Класс интерфейс
-///////////////////////////////////
+// Interface management class.
 class ControlInterface {
+    // Add a Handler for the Run Button.
     addHundlerButtonRun () {
         let buttonRun = document.getElementById('button-run');
         this.hundlerButtonRun = () => {
@@ -386,14 +383,14 @@ class ControlInterface {
         };
         buttonRun.addEventListener('click', this.hundlerButtonRun);
     }
-
+    // Add a handler for the button closing the action selection and task solving windows.
     addHundlerButtonCloseWindow () {
         let buttonCloseWindow = document.body.querySelectorAll('.select-action-close');
         buttonCloseWindow.forEach((item) => {
             item.addEventListener('click', this.hundlerButtonCloseWindow);
         });
     }
-
+    // Close button handler.
     hundlerButtonCloseWindow (event) {
         let selectAction;
         if (event) {
@@ -415,7 +412,7 @@ class ControlInterface {
             clearAnswerContainer();
         },1000);
     };
-
+    // Add a handler for action buttons.
     addHundlerButtonTypeAct (typeAct) {
         let buttonTypeAct = document.getElementById(`menu-action-button-${typeAct}`);
         this.hundlerButtonTypeAct = () => {
@@ -433,7 +430,7 @@ class ControlInterface {
         };
         buttonTypeAct.addEventListener('click', this.hundlerButtonTypeAct);
     }
-
+    // Add a handler for the buttons to select a particular type of impact.
     addHundlerButtonConcreteTypeAct () {
         let actionTypeContainers = document.body.querySelectorAll('.menu-action-type-container'); 
         this.hundlerButtonConcreteTypeAct = (event) => {
@@ -455,7 +452,7 @@ class ControlInterface {
             item.addEventListener('click', this.hundlerButtonConcreteTypeAct);
         });
     }
-
+    // Add a handler for the background music menu.
     addHundlerAudioPlayer () {
         let audioContainer = document.getElementById('audio-container');
         let contentAudioContainer = [...audioContainer.children];
@@ -492,18 +489,19 @@ class ControlInterface {
         audioPlayerButtonsContainer.addEventListener('click', this.hundlerAudioPlayerButtons);
     };
 }
-//////////////////////////////////////////////////////////////
+// Class task for the player.
 class Task {
     constructor (event) {
         this.fillTaskContainer(event);
     }
-
+    // Fill in the task window.
     fillTaskContainer (event) {
         let typeAction = getTypeAction(event);
         let objQuestion = getObjQuestion(typeAction);
         let typeQuestion = getTypeQuestion(objQuestion);
         let questionContainer = document.getElementById('question-container');
         let answerContainer = document.getElementById('answer-container');
+        
         if (typeQuestion === 'Puzzle') {
             this.createPuzzle(questionContainer, answerContainer, objQuestion);
         } else {
@@ -512,7 +510,7 @@ class Task {
             this.fillAnserContainer(typeQuestion, questionText, objQuestion, answerContainer);
         }
     }
-
+    // Fill the task answer container.
     fillAnserContainer (typeQuestion, questionText, objQuestion, answerContainer) {
         if (typeQuestion === 'Select answer') {
             this.fillAnserContainerOptions(objQuestion, answerContainer);
@@ -522,7 +520,7 @@ class Task {
             this.fillAnserContainerAudioTest(objQuestion, answerContainer);
         }
     }
-
+    // Fill in the list of answers to the question.
     fillAnserContainerOptions (objQuestion, answerContainer) {
         let answerOptions = objQuestion.Options;
         for (let i = 0; i < answerOptions.length; i++) {
@@ -610,12 +608,13 @@ class Task {
             $( "#puzzle-container" ).disableSelection();
         } );
     }
-
+    // Add a handler for the audio issue start button.
     addHundlerButtonPlayQuestion (buttonPlayAudio) {
         this.hundlerButtonPlayQuestion = (event) => {
             let audioQuestion = event.target.dataset.audioQuestion;
             let voices = speechSynthesis.getVoices();
             let utterance = new SpeechSynthesisUtterance(audioQuestion);
+            
             utterance.voice = voices[2];
             utterance.lang = 'en-US';
             utterance.rate = 0.7;
@@ -623,7 +622,7 @@ class Task {
         }
         buttonPlayAudio.addEventListener('click', this.hundlerButtonPlayQuestion);
     }
-
+    // Check the player's answer.
     checkUserAnswer (correctOrderPuzzle, currentOrderPuzzle) {
         if (isPartString(correctOrderPuzzle, currentOrderPuzzle)) {
             this.displayTaskResult('Correct answer!');
@@ -640,7 +639,7 @@ class Task {
             }, 6000)
         }
     }
-
+    // Display the result of the player's response.
     displayTaskResult(text) {
         let taskResultContainer = document.createElement('div');
         taskResultContainer.textContent = text;
@@ -658,17 +657,23 @@ class Task {
             }, 50);
         });
         promise.then(() => {
-                setTimeout(() => {
-                    game.control.hundlerButtonCloseWindow();
-                }, 4000);
+            setTimeout(() => {
+                game.control.hundlerButtonCloseWindow();
+            }, 4000);
         });
     }
 
 };   
 
+
+
+// Utilities
+
+// Get a random element from a given half of the array.
 getRandomElemArrayFromDesiredHalf = (array, half) => {
     let halfLengthArray = Math.round(array.length / 2);
     let randomNumber = Math.round(Math.random() * halfLengthArray);
+    
     if (half === 'first') {
         let randomElem = array.splice((randomNumber), 1);
         return randomElem[0];
@@ -678,16 +683,17 @@ getRandomElemArrayFromDesiredHalf = (array, half) => {
     }
 }
 
-
+// Check the occurrence of one line in another.
 isPartString = (original, verifiable) => {
     let verifiableLowerCase = verifiable.toLowerCase();
+    
     if (verifiableLowerCase.indexOf(original) !== -1) {
         return (true);
     } else {
         return (false);
     }
 }
-
+// Get the object with the question.
 getObjQuestion = (typeAction) => {
     if (copyQuestions.length == 0) {
         copyQuestions = [...questions];
@@ -699,7 +705,7 @@ getObjQuestion = (typeAction) => {
         return(getRandomElemArrayFromDesiredHalf(copyQuestions, 'first'));
     }
 }
-
+// Get the type of the action selected by the user.
 getTypeAction = (event) => {
     switch (event.target.parentElement.parentElement.parentElement.id) {
         case 'select-attack':
@@ -730,11 +736,13 @@ clearAnswerContainer = () => {
 
 calculateValueImpact = (selectedTypeAction) => {
     let value;
+
     if (selectedTypeAction === 'epic-attack') {
         value = getRandomArbitrary(40, 50);
     } else {
         value = getRandomArbitrary(20, 25);
     };
+
     return Math.round(value);
 };
 
@@ -745,7 +753,6 @@ getRandomArbitrary = (min, max) => {
 getTypeSelectedAction = (event) => {
     return event.target.parentElement.id.substr(19);
 };
-
 
 getPersonageContainer = (enemyType) => {
     let personageContainer;
@@ -777,12 +784,6 @@ replaceBlanksOnDashes = (str) => {
     return result;
 }
 
-goToResults = () => {
-    createWindowResults();
-    fillWindowResults();
-    displayWindowResults();
-};
-
 createWindowResults = () => {
     let windowResults = document.createElement('div');
     let windowResultsTitle = document.createElement('div');
@@ -803,8 +804,6 @@ createWindowResults = () => {
 
 fillWindowResults = () => {
     let arrayResultsPlayers = getResultsPlayers();
-    console.log(arrayResultsPlayers);
-    console.log(arrayResultsPlayers[0]);
     let tableResults = document.getElementById('tableResults');
 
     for (let i = 0; i < arrayResultsPlayers.length; i++) {
@@ -826,12 +825,12 @@ displayWindowResults = () => {
     windowResults.classList.add('displayBlock');
     windowResults.classList.add('animate-appear-results-players');
 }
-
+// Get the results of previous games.
 getResultsPlayers = () => {
     let jsonString = localStorage.getItem('LOTR-Game-array-results');
     return(JSON.parse(jsonString));
 };
-
+// Save the results of the current player.
 savePlayerResult = () => {
     let arrayResultsPlayers = getResultsPlayers();
     let currentPlayer = arrayResultsPlayers.pop();
@@ -868,5 +867,8 @@ soundAttackEnemy = () => {
 }
 
 
+
+// Create a new game.
 let game = new Main();
+// Starting a new game.
 game.init();
