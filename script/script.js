@@ -190,7 +190,7 @@ class Main {
         answerContainer.addEventListener('click', this.hundlerAnswerContainer);
     }
     // Go to the results table window.
-    goToResults = () => {
+    goToResults () {
         createWindowResults();
         fillWindowResults();
         displayWindowResults();
