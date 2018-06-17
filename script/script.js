@@ -1,46 +1,9 @@
 //Download JSON with questions, names of orcs and list of enemies
-// Function for loading JSON.
-let getJSON = function(url/*, callback*/) {
-    return fetch(url)
-      .then((response) => response.json())
-  };
   // Objects for the loaded data.
   let questions;
   let copyQuestions = [];
   let orcNames;
   let listEnemies;
-
-  let loadData = () => {
-    loadQuestions()
-    .then(() => loadOrcNames())
-    .then(() => loadListEnemy())
-  }
-
-  let loadQuestions = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/questions.json')
-      .then((data) => {questions = data})
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
-
-  let loadOrcNames = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/names-orc.json')
-      .then((data) => {orcNames = data})
-      .then(() => game.checkNameEnemy())
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
-
-  let loadListEnemy = () => {
-    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
-      .then((data) => {listEnemies = data})
-      .catch((error) => alert('Something went wrong: ' + error))
-  }
-
-// Initiate a JSON download.
-    loadData()
-
-
-
-
 
 // The class that controls the game.
 class Main {
@@ -54,6 +17,7 @@ class Main {
         this.quantityKilledEnemy = 0;
     }
     init () {
+        this.loadData();
         this.player = new Player('Gandalf', 100);
         this.enemy = new Enemy('Orc', 20, 'orc');
         this.player.enterArena();
@@ -69,6 +33,11 @@ class Main {
         this.control.addHundlerAudioPlayer();
         this.addHundlerAnswerContainer();
         this.updateStatusBar();
+    }
+    loadData () {
+        loadQuestions()
+        .then(() => loadOrcNames())
+        .then(() => loadListEnemy())
     }
     // Create a new task for the player.
     createNewTask (event) {
@@ -865,6 +834,31 @@ soundAttackEnemy = () => {
     audio.src = 'audio/NazgulAudio.mp3'; // Указываем путь к звуку "клика"
     audio.autoplay = true; // Автоматически запускаем
 }
+
+  // Function for loading JSON.
+  function getJSON (url/*, callback*/) {
+    return fetch(url)
+        .then((response) => response.json())
+  };
+
+  function loadQuestions () {
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/questions.json')
+      .then((data) => {questions = data})
+      .catch((error) => alert('Something went wrong: ' + error))
+  }
+
+  function loadOrcNames () {
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/names-orc.json')
+      .then((data) => {orcNames = data})
+      .then(() => game.checkNameEnemy())
+      .catch((error) => alert('Something went wrong: ' + error))
+  }
+
+  function loadListEnemy () {
+    return getJSON('https://raw.githubusercontent.com/KirylNik/KirylNik.github.io/master/json/list-enemy.json')
+      .then((data) => {listEnemies = data})
+      .catch((error) => alert('Something went wrong: ' + error))
+  }
 
 
 
