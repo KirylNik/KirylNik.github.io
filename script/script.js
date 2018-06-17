@@ -223,7 +223,7 @@ class Personage {
         };
 
         if (game.currentStep === 'player') {
-            game.enemy.health -= damage*5;
+            game.enemy.health -= damage;
         } else {
             game.player.health -= damage;
         }
