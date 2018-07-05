@@ -424,7 +424,7 @@ class ControlInterface {
         let audioContainer = document.getElementById('audio-container');
         let contentAudioContainer = [...audioContainer.children];
         let audioPlayerButtonsContainer = document.getElementById('audio-player-buttons-container');
-        let currentTrack = 0;
+        let currentTrack = 1;
     
         this.hundlerAudioPlayerButtons = (event) => {
             if (event.target.id === 'audio-player-button-pause') {
@@ -639,7 +639,7 @@ class Task {
 // Get a random element from a given half of the array.
 getRandomElemArrayFromDesiredHalf = (array, half) => {
     let halfLengthArray = Math.round(array.length / 2);
-    let randomNumber = Math.round(Math.random() * halfLengthArray);
+    let randomNumber = Math.round(Math.random() * halfLengthArray) || 1;
     
     if (half === 'first') {
         let randomElem = array.splice((randomNumber), 1);
