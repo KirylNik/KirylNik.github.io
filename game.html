@@ -3,33 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Final game</title>
-        <link rel="stylesheet" href="style/style.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body>
-        <div id="audio-container">
-            <audio id='audio0'><source src="audio/00.mp3" type="audio/mpeg"></audio>
-            <audio id='audio1' autoplay><source src="audio/01.mp3" type="audio/mpeg"></audio>
-            <audio id='audio2'><source src="audio/02.mp3" type="audio/mpeg"></audio>
-            <audio id='audio3'><source src="audio/03.mp3" type="audio/mpeg"></audio>
-            <audio id='audio4'><source src="audio/04.mp3" type="audio/mpeg"></audio>
-            <audio id='audio5'><source src="audio/05.mp3" type="audio/mpeg"></audio>
-            <audio id='audio6'><source src="audio/06.mp3" type="audio/mpeg"></audio>
-            <audio id='audio7'><source src="audio/07.mp3" type="audio/mpeg"></audio>
-            <audio id='audio8'><source src="audio/08.mp3" type="audio/mpeg"></audio>
-            <audio id='audio9'><source src="audio/09.mp3" type="audio/mpeg"></audio>
-            <audio id='audio10'><source src="audio/10.mp3" type="audio/mpeg"></audio>
-            <audio id='audio11'><source src="audio/11.mp3" type="audio/mpeg"></audio>
-            <audio id='audio12'><source src="audio/12.mp3" type="audio/mpeg"></audio>
-            <audio id='audio13'><source src="audio/13.mp3" type="audio/mpeg"></audio>
-        </div>
-        <div class="audio-player-buttons-container" id="audio-player-buttons-container">
-            <div class="audio-player-button" id="audio-player-button-back"></div>
-            <div class="audio-player-button" id="audio-player-button-pause"></div>
-            <div class="audio-player-button" id="audio-player-button-play"></div>
-            <div class="audio-player-button" id="audio-player-button-next"></div>
-        </div>
         <div class="personages-status-container">
             <div class="personages-status">
                 <div class="name-personage" id="status-bar-player-name"></div>
@@ -121,6 +98,6 @@
         </div>
         <div class="modal-window-background" id="modal-window-background"></div>
         <div class="button-run" id="button-run">run</div>
-        <script src="script/script.js" async defer></script>
+        <script src="dist/bundle.js" async defer></script>
     </body>
 </html>

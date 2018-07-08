@@ -12,29 +12,6 @@
     font-style: normal;
 }
 
-@keyframes changePositionResultContainer {
-    0% {
-        transition-property: opacity;
-        opacity: 0;
-    }
-
-    10% {
-        transition-property: opacity;
-        right: 30%;
-        opacity: 1;
-    }
-
-    90% {
-        right: 45%;
-        opacity: 1;
-    }
-
-    100% {
-        right: 100%;
-        opacity: 0;
-    }
-}
-
 @keyframes animatePlayerAttack1 {
     0% {
         left: 20%
@@ -896,28 +873,28 @@ body {
 .enter-arena-left {
     left: 5%;
     transition: transform 5s;
-    transform: translateX(220px);
+    transform: translateX(110%);
     position: absolute;
     bottom: 15%;
 }
 
 .enter-arena-right {
     transition: transform 5s;
-    transform: translateX(-220px);
+    transform: translateX(-110%);
     position: absolute;
     bottom: 15%;
 }
 
 .player-come {
-    width: 170px;
-    height: 242px;
+    width: 13%;
+    height: 35%;
     background-size: 100% 100%;
     background-image: url("../image/gandalf-stand-125.gif");
 }
 
 .player-stand {
-    width: 170px;
-    height: 242px;
+    width: 13%;
+    height: 35%;
     background-size: 100% 100%;
     background-image: url("../image/gandalf-stand-125.gif");
     position: absolute;
@@ -930,25 +907,27 @@ body {
 }
 
 .orc-come {
-    width: 213px;
-    height: 148px;
+    width: 17%;
+    height: 21%;
     background-image: url("../image/OrcCome.gif");
+    background-size: 100% 100%;
     bottom: 15%;
     right: 0px;
 }
 
 .orc-stand {
-    width: 213px;
-    height: 148px;
+    width: 17%;
+    height: 21%;
     background-image: url("../image/OrcStand.gif");
+    background-size: 100% 100%;
     position: absolute;
     bottom: 15%;
     right: 20%;
 }
 
 .Nazgul-come {
-    width: 170px;
-    height: 180px;
+    width: 13%;
+    height: 26%;
     background-size: 100% 100%;
     background-image: url("../image/nazgulStand.gif");
     bottom: 15%;
@@ -956,8 +935,8 @@ body {
 }
 
 .Nazgul-stand {
-    width: 170px;
-    height: 180px;
+    width: 13%;
+    height: 26%;
     background-size: 100% 100%;
     background-image: url("../image/nazgulStand.gif");
     position: absolute;
@@ -966,8 +945,8 @@ body {
 }
 
 .King-Nazgul-come {
-    width: 170px;
-    height: 225px;
+    width: 16%;
+    height: 30%;
     background-size: 100% 100%;
     background-image: url("../image/nazgul-king-stand.gif");
     bottom: 15%;
@@ -975,8 +954,8 @@ body {
 }
 
 .King-Nazgul-stand {
-    width: 200px;
-    height: 210px;
+    width: 16%;
+    height: 30%;
     background-size: 100% 100%;
     background-image: url("../image/nazgul-king-stand.gif");
     position: absolute;
@@ -985,8 +964,8 @@ body {
 }
 
 .Sauron-come {
-    width: 250px;
-    height: 290px;
+    width: 19%;
+    height: 42%;
     background-size: 100% 100%;
     background-image: url("../image/sauron-come.gif");
     bottom: 15%;
@@ -994,8 +973,8 @@ body {
 }
 
 .Sauron-stand {
-    width: 240px;
-    height: 290px;
+    width: 19%;
+    height: 42%;
     background-size: 100% 100%;
     background-image: url("../image/sauron-stand.gif");
     position: absolute;
@@ -1011,8 +990,9 @@ body {
     bottom: 1.5%;
     width: 16%;
     height: 5%;
-    line-height: 3rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
 }
 
@@ -1203,13 +1183,6 @@ body {
     opacity: 1;
 }
 
-.animate-appear-results-players {
-    transition-property: transform, opacity;
-    transform: translateY(-90px);
-    opacity: 1;
-    display: block;
-}
-
 .modal-window-background {
     position: fixed;
     top: 0;
@@ -1228,7 +1201,7 @@ body {
     align-items: center;
 }
 
-.answerOption {
+.answer-option {
     height: 35px;
     padding: 0px 25px;
     width: max-content;
@@ -1240,7 +1213,7 @@ body {
     font-size: 1.5rem;
 }
 
-.answerOption:hover {
+.answer-option:hover {
     font-size: 1.6rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
     cursor: pointer;
@@ -1269,66 +1242,25 @@ body {
     cursor: text;
 }
 
-.puzzle-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -5px auto 20px auto;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.9);
-}
-
-.puzzle-parts {
-    width: 100px;
-    height: 100px;
-    background-size: 100% 100%;
-    margin: 0px;
-}
-
-.audio-player-buttons-container {
+.audio-player-container {
     position: absolute;
     display: flex;
     left: 8%;
+    width: 17%;
+    height: 5%;
     top: 0.5%;
 }
 
 .audio-player-button {
-    width: 42px;
-    height: 25px;
-    margin-right: 10px;
+    width: 21%;
+    height: 100%;
+    margin-right: 13px;
+    border-radius: 50%;
 }
 
 .audio-player-button:hover {
     cursor: pointer;
     box-shadow: 0px 0px 40px rgba(118, 179, 35, 0.9);
-}
-
-.taskResultContainer {
-    position: absolute;
-    width: 450px;
-    height: 200px;
-    right: 0px;
-    top: calc(50% - 100px);
-    background-image: url('../image/question-backgrond.png');
-    background-size: 100% 100%;
-    z-index: 200;
-    text-align: center;
-    line-height: 200px;
-    font-size: 2.8rem;
-    font-family: anironbold, 'Times New Roman', Times, serif;
-    box-shadow: 30px -30px 40px 10px rgba(0, 0, 0, 0.9);
-    opacity: 0;
-    transition-duration: 1s;
-}
-
-.taskResultContainer-animate-appear {
-    animation: changePositionResultContainer 4s linear;
-}
-
-.colorDarkRed {
-    color: darkred;
-    text-shadow: 1px 1px 9px #000;
 }
 
 .personages-status-container {
@@ -1346,15 +1278,10 @@ body {
 .personages-status {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 29%;
     height: 100%;
     margin-right: 10px;  
-}
-
-.table-results-container {
-    font-size: 1.3em;
-    max-height: 260px;
-    overflow-y: auto;
 }
 
 .animate-player-attack1 {
@@ -1430,7 +1357,7 @@ body {
 }
 
 .animate-die {
-    animation: animateDie 8s linear;
+    animation: animateDie 2s linear;
 }
 
 .animate-orc-attack1,

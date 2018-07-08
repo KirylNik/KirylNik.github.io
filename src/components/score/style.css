@@ -1,0 +1,41 @@
+.score-container {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    left: calc(50% - 600px/2);
+    bottom: 0%;
+    background-image: url("../../image/textura.png");
+    background-size: 100% 100%;
+    transition-duration: 1s;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+}
+
+.window-score-title {
+    width: 465px;
+}
+
+.table-results-container {
+    background-image: url('../../image/question-backgrond.png');
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 0px 25px;
+    margin: 22% auto 30px auto;
+    max-width: 355px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.9);
+    font-size: 1.3em;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.animate-appear-score-container {
+    transition-property: transform, opacity;
+    transform: translateY(-90px);
+    opacity: 1;
+    display: block;
+}
+
+.displayBlock {
+    display: block;
+}
